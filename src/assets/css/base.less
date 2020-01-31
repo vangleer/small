@@ -9,6 +9,7 @@ body {
   font-size: @fintSize;
   width: 100%;
   height: 100%;
+  background-color: #eee;
 }
 // 为要使用的所有便签设置css3盒模型并清除外边距和内边距，由于在移动端会默认有点击高亮所有需要把-webkit-tap-highlight-color设置为透明色
 html,
@@ -51,19 +52,19 @@ a {
 
 // 清除浮动
 .clearfix::after {
-    content:'';
-    display: block;
-    width: 0;
-    height: 0;
-    visibility: hidden;
-    clear: both;
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
 }
 .clearfix {
-    zoom: 1;
+  zoom: 1;
 }
 .left {
-    float: left;
+  float: left;
 }
 .right {
-    float: right;
+  float: right;
 }

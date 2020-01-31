@@ -1,20 +1,16 @@
 <template>
   <div id="app">
-    <p>123</p>
-    <hello></hello>
+    <router-view />
+    <main-tab-bar></main-tab-bar>
   </div>
 </template>
 <script>
-import Hello from './components/Hello.vue'
+import MainTabBar from '@/components/content/mainTabBar/MainTabBar.vue'
 export default {
   components: {
-    Hello
+    MainTabBar
   }
 }
 </script>
 <style lang="less">
-@import './assets/css/base.less';
-p {
-  color: @tintColor;
-}
 </style>

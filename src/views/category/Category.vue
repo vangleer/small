@@ -1,0 +1,189 @@
+<template>
+  <div class="category">
+    <ul class="content">
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+      <li>分类列表</li>
+    </ul>
+  </div>
+</template>
+<script>
+import BScroll from 'better-scroll'
+export default {
+  data() {
+    return {
+      scroll: null
+    }
+  },
+  mounted() {
+    // eslint-disable-next-line no-new
+    this.scroll = new BScroll('.category', {
+      probeType: 3
+    })
+    this.scroll.on('scroll', position => {
+      console.log(position)
+    })
+  }
+}
+</script>
+<style scoped>
+.category {
+  height: 500px;
+  background-color: red;
+  overflow: hidden;
+}
+</style>
