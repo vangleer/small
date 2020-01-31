@@ -1,0 +1,69 @@
+@textColor: #666;
+@textHighColor: #ff5777;
+@tintColor: #ff7198;
+@bgColor: #fff;
+@fintSize: 14px;
+@lineHeight: 1.5;
+html,
+body {
+  font-size: @fintSize;
+  width: 100%;
+  height: 100%;
+}
+// 为要使用的所有便签设置css3盒模型并清除外边距和内边距，由于在移动端会默认有点击高亮所有需要把-webkit-tap-highlight-color设置为透明色
+html,
+body,
+div,
+span,
+i,
+a,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+button,
+input,
+form,
+p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+// 去掉input和button的边框和outline
+input,
+button {
+  border: 0;
+  outline: none;
+}
+// 去掉列表默认样式
+ul,
+ol {
+  list-style: none;
+}
+// 去掉超链接的下划线并设置字体颜色
+a {
+  text-decoration: none;
+  color: @textColor;
+}
+
+// 清除浮动
+.clearfix::after {
+    content:'';
+    display: block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+.clearfix {
+    zoom: 1;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}

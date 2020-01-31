@@ -1,0 +1,57 @@
+html,
+body {
+  font-size: 14px;
+  width: 100%;
+  height: 100%;
+}
+html,
+body,
+div,
+span,
+i,
+a,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+button,
+input,
+form,
+p {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+input,
+button {
+  border: 0;
+  outline: none;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  zoom: 1;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
