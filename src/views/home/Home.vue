@@ -4,16 +4,35 @@
     <nav-bar class="home-nav">
       <div slot="center">购物街</div>
     </nav-bar>
-
-    <scroll :pull-up-load="true" :probe-type="3" @pullingUp="pullingUp" @scroll="contentScroll" ref="refScroll" class="content">
+    <!-- tab控制模块 -->
+    <tab-control
+      ref="tabControl2"
+      @tabClick="tabClick"
+      :titles="['流行', '新款', '精选']"
+      class="istab-control"
+      v-show="isTabFixed"
+    />
+    <scroll
+      :pull-up-load="true"
+      :probe-type="3"
+      @scroll="contentScroll"
+      @pullingup="loadMore"
+      ref="refScroll"
+      class="content"
+    >
       <!-- 轮播图 -->
-      <hemo-swiper :banners="banners"></hemo-swiper>
+      <hemo-swiper @swiperImageLoad="swiperImageLoad" :banners="banners"></hemo-swiper>
       <!-- 推荐模块 -->
       <recommend-view :recommends="recommends"></recommend-view>
       <!-- Feature模块 -->
       <feature></feature>
       <!-- tab控制模块 -->
-      <tab-control @tabClick="tabClick" :titles="['流行', '新款', '精选']" />
+      <tab-control
+        ref="tabControl1"
+        @tabClick="tabClick"
+        :titles="['流行', '新款', '精选']"
+        :class="{fixed:isTabFixed}"
+      />
       <!-- 商品列表 -->
       <goods-list :goods="showGoods" />
     </scroll>
@@ -26,7 +45,7 @@ import TabControl from '@/components/content/tabControl/TabControl.vue'
 import GoodsList from '@/components/content/goods/GoodsList.vue'
 
 import { getHomeMultidata, getHomeGoods } from '@/network/home'
-
+import { deBounce } from '@/common/utils.js'
 import HemoSwiper from './chilComps/HemoSwiper.vue'
 import RecommendView from './chilComps/RecommendView.vue'
 import Feature from './chilComps/Feature.vue'
@@ -45,7 +64,10 @@ export default {
       },
       currentType: 'pop',
       scroll: null,
-      isShowBackTop: false
+      isShowBackTop: false,
+      tabOffsetTop: 0,
+      isTabFixed: false,
+      saveY: 0
     }
   },
   computed: {
@@ -53,7 +75,13 @@ export default {
       return this.goods[this.currentType].list
     }
   },
-  mounted() {},
+  mounted() {
+    // 1. 监听it中图片加载完成
+    const refresh = deBounce(this.$refs.refScroll.refresh, 500)
+    this.$bus.$on('itemImageLoad', () => {
+      refresh()
+    })
+  },
   components: {
     NavBar,
     HemoSwiper,
@@ -65,9 +93,19 @@ export default {
     BackTop
   },
   created() {
+    // 1. 请求多个数据
     this.getHomeMultidata()
-    // 请求商品数据
-    this.getHomeGoods(this.currentType)
+    // 2. 请求商品数据
+    this.getHomeGoods('pop')
+    this.getHomeGoods('new')
+    this.getHomeGoods('sell')
+  },
+  activated() {
+    this.$refs.refScroll.scrollTo(0, this.saveY, 0)
+    this.$refs.refScroll.refresh()
+  },
+  deactivated() {
+    this.saveY = this.$refs.refScroll.getScrollY
   },
   methods: {
     /**
@@ -85,7 +123,8 @@ export default {
           this.currentType = 'sell'
           break
       }
-      this.getHomeGoods(this.currentType)
+      this.$refs.tabControl1.currentIndex = index
+      this.$refs.tabControl2.currentIndex = index
     },
     // 返回顶部
     backTop() {
@@ -93,15 +132,19 @@ export default {
     },
     contentScroll(p) {
       this.isShowBackTop = -p.y > 1000
+      this.isTabFixed = (-p.y) > this.tabOffsetTop
     },
-    // 上拉加载事件
-    pullingUp() {
+    // 加载更多的方法
+    loadMore() {
       this.getHomeGoods(this.currentType)
-      this.$refs.refScroll.scroll.refresh()
+    },
+    swiperImageLoad() {
+      this.tabOffsetTop = this.$refs.tabControl1.$el.offsetTop
     },
     /**
      * 网络请求的方法
-     */ getHomeMultidata() {
+     */
+    getHomeMultidata() {
       getHomeMultidata().then(res => {
         this.banners = res.data.banner.list
         this.recommends = res.data.recommend.list
@@ -113,7 +156,6 @@ export default {
       getHomeGoods(type, page).then(res => {
         this.goods[type].list.push(...res.data.list)
         this.goods[type].page += 1
-        console.log(res)
         this.$refs.refScroll.finishPullUp()
       })
     }
@@ -124,12 +166,24 @@ export default {
 @import '../../assets/css/base.less';
 #home {
   position: relative;
-  padding-top: 44px;
   height: 100vh;
+}
+.fixed {
+  position: fixed;
+
+  margin-top: 1px;
 }
 .home-nav {
   background-color: @tintColor;
   color: #fff;
+}
+.istab-control {
+  position: fixed;
+  width: 100%;
+  top: 43px;
+  left: 0;
+  z-index: 9;
+  margin-top: 1px;
 }
 .content {
   position: absolute;

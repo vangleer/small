@@ -5,6 +5,7 @@ import store from './store'
 // 引入css初始化文件
 import './assets/css/base.less'
 Vue.config.productionTip = false
+Vue.prototype.$bus = new Vue()
 
 new Vue({
   router,

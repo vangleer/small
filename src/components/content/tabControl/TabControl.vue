@@ -1,7 +1,13 @@
 <template>
   <div class="tab-control">
-    <div @click="changeIndex(index)" :class="{ active: currentIndex === index }" class="tab-control-item" v-for="(item, index) in titles" :key="index">
-      <span> {{ item }}</span>
+    <div
+      @click="changeIndex(index)"
+      :class="{ active: currentIndex === index }"
+      class="tab-control-item"
+      v-for="(item, index) in titles"
+      :key="index"
+    >
+      <span>{{ item }}</span>
     </div>
   </div>
 </template>
@@ -36,7 +42,6 @@ export default {
   top: 44px;
   background-color: #fff;
   margin-top: 0px;
-  z-index: 99;
   .tab-control-item {
     flex: 1;
     text-align: center;
