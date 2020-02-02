@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import NavBar from '@/components/common/navbar/NavBar.vue'
+import NavBar from '../../components/common/navbar/NavBar.vue'
 import BottomBar from './BottomBar.vue'
 import CartList from './CartList.vue'
 import { mapGetters } from 'vuex'
@@ -29,6 +29,7 @@ export default {
 @import '../../assets/css/base.less';
 .cart {
   height: 100vh;
+  padding-top: 44px;
 }
 .nav-bar {
   background-color: @tintColor;

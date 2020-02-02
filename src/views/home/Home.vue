@@ -41,20 +41,20 @@
   </div>
 </template>
 <script>
-import NavBar from '@/components/common/navbar/NavBar.vue'
-import TabControl from '@/components/content/tabControl/TabControl.vue'
-import GoodsList from '@/components/content/goods/GoodsList.vue'
+import NavBar from '../../components/common/navbar/NavBar.vue'
+import TabControl from '../../components/content/tabControl/TabControl.vue'
+import GoodsList from '../../components/content/goods/GoodsList.vue'
 
-import { getHomeMultidata, getHomeGoods } from '@/network/home'
-import { itemListenerMixin } from '@/common/mixin.js'
+import { getHomeMultidata, getHomeGoods } from '../../network/home'
+import { itemListenerMixin } from '../../common/mixin.js'
 // import HemoSwiper from './chilComps/HemoSwiper.vue'
-import MySwiper from '@/components/common/swiper/MySwiper.vue'
+import MySwiper from '../../components/common/swiper/MySwiper.vue'
 
 import RecommendView from './chilComps/RecommendView.vue'
 import Feature from './chilComps/Feature.vue'
 
-import Scroll from '@/components/common/scroll/Scroll.vue'
-import BackTop from '@/components/content/backTop/BackTop.vue'
+import Scroll from '../../components/common/scroll/Scroll.vue'
+import BackTop from '../../components/content/backTop/BackTop.vue'
 export default {
   data() {
     return {

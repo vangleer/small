@@ -15,14 +15,9 @@ export function request(config) {
   })
 
   // 2.2.响应拦截
-  instance.interceptors.response.use(
-    res => {
-      return res.data
-    },
-    err => {
-      console.log(err)
-    }
-  )
+  instance.interceptors.response.use(res => {
+    return res.data
+  })
 
   // 3.发送真正的网络请求
   return instance(config)

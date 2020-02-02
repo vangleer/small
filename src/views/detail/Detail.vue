@@ -31,12 +31,12 @@ import DetailParamInfo from './DetailParamInfo.vue'
 import DetailCommentInfo from './DetailCommentInfo.vue'
 import DetailBottomBar from './DetailBottomBar.vue'
 
-import MySwiper from '@/components/common/swiper/MySwiper.vue'
-import Scroll from '@/components/common/scroll/Scroll.vue'
-import BackTop from '@/components/content/backTop/BackTop.vue'
-import GoodsList from '@/components/content/goods/GoodsList'
-import { itemListenerMixin } from '@/common/mixin.js'
-import { getDetail, Goods, Shop, GoodsParam, getRecommend } from '@/network/detail.js'
+import MySwiper from '../../components/common/swiper/MySwiper.vue'
+import Scroll from '../../components/common/scroll/Scroll.vue'
+import BackTop from '../../components/content/backTop/BackTop.vue'
+import GoodsList from '../../components/content/goods/GoodsList'
+import { itemListenerMixin } from '../../common/mixin.js'
+import { getDetail, Goods, Shop, GoodsParam, getRecommend } from '../../network/detail.js'
 export default {
   components: {
     // 1.详情navBar组件
@@ -150,7 +150,6 @@ export default {
     },
     // 加入购物车功能
     addToCart() {
-      console.log(this.goods)
       const product = {}
       product.image = this.topImages[0].image
       product.title = this.goods.title

@@ -19,10 +19,10 @@
   </div>
 </template>
 <script>
-import NavBar from '@/components/common/navbar/NavBar.vue'
+import NavBar from '../../components/common/navbar/NavBar.vue'
 import CategoryGoods from './CategoryGoods.vue'
-import { getCategories, getSubcategory, getCategoryDetail } from '@/network/category.js'
-import TabControl from '@/components/content/tabControl/TabControl.vue'
+import { getCategories, getCategoryDetail } from '../../network/category.js'
+import TabControl from '../../components/content/tabControl/TabControl.vue'
 import BScroll from 'better-scroll'
 export default {
   data() {
@@ -49,17 +49,10 @@ export default {
     setTimeout(() => {
       getCategoryDetail(this.cateTitles[this.currentIndex].miniWallkey, this.categoryDetail[this.tabCurrentIndex]).then(res => {
         this.goodsDetail = res
-        console.log(res)
       })
     }, 1500)
   },
   methods: {
-    // 根据当前的index去查找数据
-    _getSubcategory(maitKey) {
-      getSubcategory(maitKey).then(res => {
-        console.log(res)
-      })
-    },
     // 点击title高亮
     ItemClick(index) {
       this.currentIndex = index

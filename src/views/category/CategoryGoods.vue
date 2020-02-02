@@ -36,14 +36,13 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$refs.wrapper)
     this.scroll = new BScroll(this.$refs.wrapper)
   }
 }
 </script>
 <style lang="less" scoped>
 .goods {
-    overflow: hidden;
+  overflow: hidden;
 }
 .goods-list {
   width: 100%;

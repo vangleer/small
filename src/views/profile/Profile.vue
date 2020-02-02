@@ -10,7 +10,7 @@
   </div>
 </template>
 <script>
-import NavBar from '@/components/common/navbar/NavBar.vue'
+import NavBar from '../../components/common/navbar/NavBar.vue'
 import UserInfo from './UserInfo.vue'
 import UserService from './UserService.vue'
 export default {

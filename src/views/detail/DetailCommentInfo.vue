@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { formatDate } from '@/common/utils'
+import { formatDate } from '../../common/utils'
 export default {
   props: {
     commentInfo: {
