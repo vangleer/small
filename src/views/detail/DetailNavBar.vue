@@ -2,7 +2,7 @@
   <div id="detail">
     <nav-bar class="detail-nav">
       <div slot="left" class="back" @click="backClick">
-        <img src="../../assets/img/common/back.svg" alt />
+        <span></span>
       </div>
       <div class="title" slot="center">
         <div
@@ -50,9 +50,14 @@ export default {
   }
 }
 .back {
-  padding-top: 8px;
-  img {
-    width: 20px;
+  padding: 13px;
+  span {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-left: 2px solid #ccc;
+    border-top: 2px solid #ccc;
+    transform: rotate(-45deg);
   }
 }
 .detail-nav {
