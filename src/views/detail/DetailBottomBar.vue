@@ -58,7 +58,8 @@ export default {
   width: 22px;
   height: 22px;
   margin: 10px auto 3px;
-  background: url('../../assets/img/detail/detail_bottom.png') 0 0/100%;
+  background: url('../../assets/img/detail/detail_bottom.png') no-repeat;
+  background-size: 22px auto;
 }
 .bar-left .service {
   background-position: 0 -54px;
