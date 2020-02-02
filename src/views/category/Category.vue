@@ -1,5 +1,8 @@
 <template>
   <div class="category">
+    <nav-bar>
+      <div slot="center">商品分类</div>
+    </nav-bar>
     <ul class="content">
       <li>分类列表</li>
       <li>分类列表</li>
@@ -163,11 +166,16 @@
 </template>
 <script>
 import BScroll from 'better-scroll'
+import NavBar from '@/components/common/navbar/NavBar.vue'
+import { getCategories } from '@/network/category.js'
 export default {
   data() {
     return {
       scroll: null
     }
+  },
+  components: {
+    NavBar
   },
   mounted() {
     // eslint-disable-next-line no-new
@@ -176,6 +184,9 @@ export default {
     })
     this.scroll.on('scroll', position => {
       console.log(position)
+    })
+    getCategories().then(res => {
+      console.log(res)
     })
   }
 }

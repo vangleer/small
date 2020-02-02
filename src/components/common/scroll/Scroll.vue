@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" ref="wrapper">
+  <div class="wrap" ref="wrapper">
     <div class="content">
       <slot></slot>
     </div>
@@ -61,9 +61,12 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-.wrapper {
+.wrap {
   height: 100%;
   width: 100%;
   overflow: hidden;
+  .content {
+    padding-top: 0;
+  }
 }
 </style>

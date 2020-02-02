@@ -1,6 +1,6 @@
 <template>
   <div class="back-top">
-    <img src="../../../assets/img/common/top.png" alt="" />
+    <img src="../../../assets/img/common/top.png" alt />
   </div>
 </template>
 <script>
@@ -13,6 +13,7 @@ export default {
   position: fixed;
   right: 0;
   bottom: 49px;
+  z-index: 9999;
   img {
     width: 43px;
     height: 43px;

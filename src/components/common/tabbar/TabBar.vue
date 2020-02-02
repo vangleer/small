@@ -12,6 +12,7 @@ export default {
 <style scoped>
 #tab-bar {
   position: fixed;
+  z-index: 9999;
   left: 0;
   right: 0;
   bottom: 0;

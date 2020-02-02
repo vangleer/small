@@ -21,7 +21,8 @@
       class="content"
     >
       <!-- 轮播图 -->
-      <hemo-swiper @swiperImageLoad="swiperImageLoad" :banners="banners"></hemo-swiper>
+      <!-- <hemo-swiper @swiperImageLoad="swiperImageLoad" :banners="banners"  ></hemo-swiper> -->
+      <my-swiper @swiperImageLoad="swiperImageLoad" :banners="banners"></my-swiper>
       <!-- 推荐模块 -->
       <recommend-view :recommends="recommends"></recommend-view>
       <!-- Feature模块 -->
@@ -45,8 +46,10 @@ import TabControl from '@/components/content/tabControl/TabControl.vue'
 import GoodsList from '@/components/content/goods/GoodsList.vue'
 
 import { getHomeMultidata, getHomeGoods } from '@/network/home'
-import { deBounce } from '@/common/utils.js'
-import HemoSwiper from './chilComps/HemoSwiper.vue'
+import { itemListenerMixin } from '@/common/mixin.js'
+// import HemoSwiper from './chilComps/HemoSwiper.vue'
+import MySwiper from '@/components/common/swiper/MySwiper.vue'
+
 import RecommendView from './chilComps/RecommendView.vue'
 import Feature from './chilComps/Feature.vue'
 
@@ -75,16 +78,13 @@ export default {
       return this.goods[this.currentType].list
     }
   },
+  mixins: [itemListenerMixin],
   mounted() {
-    // 1. 监听it中图片加载完成
-    const refresh = deBounce(this.$refs.refScroll.refresh, 500)
-    this.$bus.$on('itemImageLoad', () => {
-      refresh()
-    })
   },
   components: {
     NavBar,
-    HemoSwiper,
+    // HemoSwiper,
+    MySwiper,
     RecommendView,
     Feature,
     TabControl,
@@ -106,6 +106,7 @@ export default {
   },
   deactivated() {
     this.saveY = this.$refs.refScroll.getScrollY
+    this.$bus.$off('itemImgLoad', this.itemListener)
   },
   methods: {
     /**
@@ -131,6 +132,8 @@ export default {
       this.$refs.refScroll.scrollTo(0, 0)
     },
     contentScroll(p) {
+      // console.log(p.y)
+      // console.log(this.tabOffsetTop
       this.isShowBackTop = -p.y > 1000
       this.isTabFixed = (-p.y) > this.tabOffsetTop
     },
@@ -167,10 +170,11 @@ export default {
 #home {
   position: relative;
   height: 100vh;
+  padding-bottom: 49px;
+  padding-top: 44px;
 }
 .fixed {
-  position: fixed;
-
+  position: relative;
   margin-top: 1px;
 }
 .home-nav {
@@ -187,10 +191,9 @@ export default {
 }
 .content {
   position: absolute;
-  top: 44px;
-  bottom: 49px;
   left: 0;
   right: 0;
+  // bottom: 49px;
   height: calc(100%-93px);
 }
 </style>
